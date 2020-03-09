@@ -1,29 +1,36 @@
 import React, { Component } from 'react'
-import SearchBar from '../searchBar'
+import SearchView from '../searchView'
 import CodeView from '../codeview'
 
-import { CssBaseline } from '@material-ui/core'
-import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container'
-
 export default class App extends Component {
+    onDocumentSelect() {
+
+    }
+    onAddDocumentClick() {
+
+    }
+    onDeleteDocumentClick() {
+
+    }
+    onEditDocumentClick() {
+
+    }
     render() {
         let dummy_document = {
             title: "example.py",
             code: "print 'Hello, World!'\n"
         }
         return (
-            <Container>
-                <CssBaseline />
-                <Grid container spacing={4}>
-                    <Grid item xs={3}>
-                        <SearchBar />
-                    </Grid>
-                    <Grid item xs={9}>
-                        <CodeView document={dummy_document}></CodeView>
-                    </Grid>
-                </Grid>
-            </Container>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-xl-2">
+                        <SearchView/>
+                    </div>
+                    <div class="col-md-9 col-xl-10">
+                        <CodeView/>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

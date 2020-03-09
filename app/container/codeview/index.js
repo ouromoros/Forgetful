@@ -1,8 +1,4 @@
 import React, { Component } from 'react'
-import hljs from 'highlight.js'
-// import 'highlight.js/styles/default.css';
-import '../../res/highlight.js/styles/default.css'
-import Paper from '@material-ui/core/Paper'
 
 export default class CodeView extends Component{
     constructor(props) {
@@ -12,15 +8,23 @@ export default class CodeView extends Component{
             code: props.document.code
         }
     }
-    componentDidMount() {
-        hljs.highlightBlock(document.getElementById("code_box"))
-    }
     render() {
-        return <div>
-            <h2>{this.state.title}</h2>
-            <Paper id="code_box" height="auto">
-                {this.state.code}
-            </Paper>
-        </div>
+        return (
+            <React.Fragment>
+                <div class="code-bar align-middle d-flex justify-content-between">
+                    <div class="code-title pl-3">
+                        {this.state.title}
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-secondary btn-edit float-right">Add</button>
+                        <button class="btn btn-outline-secondary btn-edit float-right">Edit</button>
+                        <button class="btn btn-outline-secondary btn-edit float-right">Delete</button>
+                    </div>
+                </div>
+                <div class="code-content pl-2">
+                    <pre><code>{this.state.code}</code></pre>
+                </div>
+            </React.Fragment>
+        )
     }
 }
