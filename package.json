@@ -6,19 +6,14 @@
   "main": "main.js",
   "scripts": {
     "lint": "eslint app",
-    "license": "license-checker --production --relativeLicensePath --json > license.json",
     "watch": "webpack --watch",
     "start": "electron ./main.js",
-    "build": "npm run pack",
     "packDev": "webpack --display-modules --mode development",
-    "pack": "webpack --mode production",
-    "test": "webpack --display-modules --mode development",
-    "dist": "build",
-    "release": "build"
+    "pack": "webpack --mode production"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hackjutsu/Lepton.git"
+    "url": "https://github.com/ouromoros/slasher.git"
   },
   "keywords": [
     "js",
@@ -48,11 +43,10 @@
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
-    "highlight.js": "^9.18.1",
-    "nconf": "^0.10.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-split-pane": "^0.1.89",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
     "winston": "^3.2.1"
   },
   "build": {
