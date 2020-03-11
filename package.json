@@ -1,8 +1,8 @@
 {
-  "name": "Slasher",
-  "version": "0.0.1",
+  "name": "Forgetful",
+  "version": "0.0.0.0",
   "description": "Fast search code snippet manager.",
-  "productName": "Slasher",
+  "productName": "Forgetful",
   "main": "main.js",
   "scripts": {
     "lint": "eslint app",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ouromoros/slasher.git"
+    "url": "https://github.com/ouromoros/Forgetful.git"
   },
   "keywords": [
     "js",
