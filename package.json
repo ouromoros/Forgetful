@@ -1,6 +1,6 @@
 {
   "name": "Forgetful",
-  "version": "0.0.0.0",
+  "version": "0.0.0",
   "description": "Fast search code snippet manager.",
   "productName": "Forgetful",
   "main": "main.js",
@@ -43,6 +43,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
+    "elasticlunr": "^0.9.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
