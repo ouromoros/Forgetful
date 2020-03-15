@@ -5,9 +5,9 @@ const init_state = {
         keyword: '',
         results: []
     },
-    code: {
+    doc: {
         title: 'Hi',
-        code: 'Start Now'
+        content: 'Start Now'
     }
 }
 export default function reducer(state = init_state, action){
@@ -16,27 +16,22 @@ export default function reducer(state = init_state, action){
             return Object.assign({}, state, {
                 code: init_state.code
             })
-        case a.SELECT_DOCUMENT:
+        case a.SET_CODEVIEW:
             // search database for code info
+            const doc = action.doc
             return Object.assign({}, state, {
-                code: {
-                    title: 'demo',
-                    code: "didn't really look"
+                doc: {
+                    title: doc.title,
+                    content: doc.content 
                 }
             })
-        case a.TRIGGER_SEARCH:
-            const dummy_results = []
-            for (let i = 0; i < 20; i++) {
-                dummy_results.push({
-                    id: i,
-                    name: 'dummy' + i
-                })
-            }
+        case a.SET_SEARCH_RESULTS:
+            const docs = action.docs
             // search index for results
             return Object.assign({}, state, {
                 search: {
                     keyword: action.key,
-                    results: dummy_results
+                    results: docs
                 }
             })
         default:

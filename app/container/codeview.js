@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as a from '../actions'
 
-const CodeView = ({ title, code, onAdd, onEdit, onDel }) => {
+const CodeView = ({ doc, onAdd, onEdit, onDel }) => {
     return (
         <React.Fragment>
             <div class="code-bar align-middle d-flex justify-content-between">
                 <div class="code-title pl-3">
-                    {title}
+                    {doc.title}
                 </div>
                 <div class="d-flex">
                     <button class="btn btn-outline-secondary btn-edit float-right" onClick={onDel}>Add</button>
@@ -16,15 +16,14 @@ const CodeView = ({ title, code, onAdd, onEdit, onDel }) => {
                 </div>
             </div>
             <div class="code-content pl-2">
-                <pre><code>{code}</code></pre>
+                <pre><code>{doc.content}</code></pre>
             </div>
         </React.Fragment>
     )
 }
 
 const mapStateToProps = state => ({
-    title: state.code.title,
-    code: state.code.code
+    doc: state.doc
 })
 
 const mapDispatchToProps = dispatch => ({

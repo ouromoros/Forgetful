@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as a from '../actions'
+import * as d from '../database'
 
 const SearchView = ({keyword, results, onKeyChange, onDocumentSelect}) => {
     const list_items = results.map((document) =>
@@ -26,8 +27,16 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    onKeyChange: (key) => dispatch(a.trigger_search(key)),
-    onDocumentSelect: (id) => dispatch(a.select_document(id))
+    onKeyChange: (key) => {
+        d.searchDocumentInfos(key, (docs) => {
+            dispatch(a.set_search_results(docs))
+        })
+    },
+    onDocumentSelect: (id) => {
+        d.getDocumentById(id, (doc) => {
+            a.set_codeview(doc)
+        })
+    }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchView)

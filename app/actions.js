@@ -1,19 +1,19 @@
 const RESET_CODEVIEW = "RESET_CODE_VIEW"
-const SELECT_DOCUMENT = "SELECT_DOCUMENT"
-const TRIGGER_SEARCH = "TRIGGER_SEARCH"
+const SET_SEARCH_RESULTS = "SET_SEARCH_RESULTS"
+const SET_CODEVIEW = "SET_DOCUMENT"
 
 const reset_codeview = () => ({
     type: RESET_CODEVIEW
 })
 
-const select_document = (id) => ({
-    type: SELECT_DOCUMENT,
-    id
+const set_search_results = (docs) => ({
+    type: SET_SEARCH_RESULTS,
+    docs
 })
 
-const trigger_search = (key) => ({
+const set_codeview = (doc) => ({
     type: TRIGGER_SEARCH,
-    key
+    doc
 })
 
-export {RESET_CODEVIEW, SELECT_DOCUMENT, TRIGGER_SEARCH, reset_codeview, select_document, trigger_search}
+export {RESET_CODEVIEW, SET_SEARCH_RESULTS, SET_CODEVIEW, reset_codeview, set_codeview, set_search_results}
