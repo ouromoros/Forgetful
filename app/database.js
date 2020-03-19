@@ -7,14 +7,14 @@ const db = new DataBase({
     filename: DB_FILE,
     autoload: true
 })
-const index = elastic(() => {
+const index = elastic(function() {
     this.addField('title')
     this.addField('content')
-    this.addRef('_id')
+    this.setRef('_id')
     this.saveDocument(false)
 })
 
-index.find({}, (err, docs) => {
+db.find({}, (err, docs) => {
     if (err) throw err
     for (let doc of docs) {
         index.addDoc(doc)

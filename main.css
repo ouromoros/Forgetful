@@ -12,7 +12,6 @@
     margin-right: -15px;
     margin-left: -15px;
     max-height: calc(100vh - 4.5rem);
-    overflow-y: scroll;
 }
 
 .search-result-item {
@@ -45,4 +44,8 @@
     border: 1px solid #d1d5da; 
     font-size: 1.4rem;
     background: #f8f8f8;
+}
+
+.scrollable {
+    overflow-y: scroll;
 }
